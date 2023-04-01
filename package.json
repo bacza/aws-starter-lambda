@@ -1,0 +1,22 @@
+{
+  "name": "aws-starter-lambda",
+  "version": "1.0.0",
+  "description": "AWS Starter Lambda",
+  "author": "Jaroslaw Baczynski <jbaczynski@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bacza/aws-starter-lambda.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "starter",
+    "lambda",
+    "api",
+    "gateway"
+  ]
+}

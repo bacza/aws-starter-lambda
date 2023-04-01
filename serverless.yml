@@ -1,0 +1,31 @@
+service: aws-starter-lambda
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  region: ${opt:region, 'eu-central-1'}
+  stage: ${opt:stage, 'dev'}
+  endpointType: REGIONAL
+
+  runtime: nodejs16.x
+  memorySize: 128
+  timeout: 15
+  logRetentionInDays: 30
+  versionFunctions: false
+
+  apiGateway:
+    shouldStartNameWithService: true
+    apiKeys:
+      - ${self:service}-${self:provider.stage}-1
+
+functions:
+  hello:
+    handler: src/handlers/hello.handler
+    events:
+      - http:
+          path: api/hello
+          method: ANY
+          private: true
+
+resources:
+  Description: "AWS Starter Lambda"
